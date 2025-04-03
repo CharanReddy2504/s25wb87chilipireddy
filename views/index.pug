@@ -1,22 +1,18 @@
-extends layout
+extends layout.pug
 
 block content
-  h1 Hello express!
-    
-    button.btn.btn-primary(type="button", onclick="faster()") Click Me
+  h2 Welcome to My Express App
 
-    //- Step 1: Add the div with id="faster"
-    div#faster add in extra
+  button(type="button", class="btn btn-primary", onclick="faster()") Press Me!
+  div#faster.mt-3 Add in extra
 
-    //- Step 3: Add JavaScript block
-    script.
-      let value = 1;
-      let amt = 2;
+  script.
+    let value = 1;
+    let amt = 2;
 
-      function faster() {
-        amt = amt * 2;
-        value = value + amt;
-        document.getElementById("faster").innerText = `Faster ${amt} times ${value}`;
-      }
+    function faster() {
+      amt *= 2;
+      value += amt;
+      document.getElementById("faster").textContent = `Faster ${value} times ${amt}`;
+    }
 
-      

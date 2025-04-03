@@ -1,7 +1,25 @@
 extends layout.pug
 
 block content
-  h2 Search Results for Crystals 
+  h1.text-center.mt-4 Search Results for Crystals
 
+    //- Step 1: Hardcoded data
+    - var results = [{ hardness: 7, color: 'Blue', discoveredIn: 'Brazil' },{ hardness: 6, color: 'Green', discoveredIn: 'Madagascar' },{ hardness: 9, color: 'Transparent', discoveredIn: 'Russia' }];
+
+    //- Step 2–6: Bootstrap grid
+    div.container-fluid
+      div.row.justify-content-center
+        each crystal in results
+          div.col-sm-2.border.p-3.m-2.bg-light.rounded.shadow
+            h5.text-primary Crystal
+            p
+              strong Hardness:
+              |  #{crystal.hardness}
+            p
+              strong Color:
+              |  #{crystal.color}
+            p
+              strong Discovered In:
+              |  #{crystal.discoveredIn}
 
 

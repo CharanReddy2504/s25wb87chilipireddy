@@ -9,6 +9,7 @@ var usersRouter = require('./routes/users');
 var CrystalsRouter = require('./routes/Crystals');
 var app = express();
 var crystalsRouter = require('./routes/Crystals');
+var gridRouter = require('./routes/grid');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -24,6 +25,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/Crystals', CrystalsRouter);
 app.use('/crystals', crystalsRouter);
+app.use('/grid', gridRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

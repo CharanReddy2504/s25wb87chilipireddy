@@ -1,5 +1,22 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  h1 Hello express!
+    
+    button.btn.btn-primary(type="button", onclick="faster()") Click Me
+
+    //- Step 1: Add the div with id="faster"
+    div#faster add in extra
+
+    //- Step 3: Add JavaScript block
+    script.
+      let value = 1;
+      let amt = 2;
+
+      function faster() {
+        amt = amt * 2;
+        value = value + amt;
+        document.getElementById("faster").innerText = `Faster ${amt} times ${value}`;
+      }
+
+      
